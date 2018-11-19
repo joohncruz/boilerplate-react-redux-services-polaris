@@ -1,0 +1,6 @@
+{
+    "editor.tabSize": 2,
+    "editor.wordWrapColumn": 100,
+    "editor.rulers": [100],
+    "editor.renderIndentGuides":true
+}

@@ -1,0 +1,9 @@
+@import 'Styles/variables.scss';
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset -1px 0 0 0 #DFE3E8;
+  overflow-x: hidden;
+  height: 100%;
+}
