@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Page, Card, TextField, Button } from '@shopify/polaris';
 
+import './Login.scss';
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +48,7 @@ class Login extends Component {
               value={password}
               onChange={this.handleChange}
             />
-            <Button onClick={this.submit} loading= { auth.loginLoading }>
+            <Button onClick={this.submit} loading={auth.loginLoading}>
               Entrar
             </Button>
           </Card>
