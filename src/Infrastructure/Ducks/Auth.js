@@ -77,52 +77,52 @@ export const loadLogout = () =>
 const reducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
-    case LOAD_AUTH_STARTED:
-      return {
-        ...state,
-        loginLoading: true,
-      };
-    case LOAD_AUTH_SUCCEED:
-      return {
-        ...state,
-        lastUpdateDateTime: moment().toISOString(),
-        logged: true,
-        loginLoading: false,
-        loginError: false,
-        data: {
-          ...action.data
-        },
-      };
-    case LOAD_AUTH_FAILED:
-      return {
-        ...state,
-        logged: false,
-        loginLoading: false,
-        loginError: action.error,
-      };
+  case LOAD_AUTH_STARTED:
+    return {
+      ...state,
+      loginLoading: true,
+    };
+  case LOAD_AUTH_SUCCEED:
+    return {
+      ...state,
+      lastUpdateDateTime: moment().toISOString(),
+      logged: true,
+      loginLoading: false,
+      loginError: false,
+      data: {
+        ...action.data
+      },
+    };
+  case LOAD_AUTH_FAILED:
+    return {
+      ...state,
+      logged: false,
+      loginLoading: false,
+      loginError: action.error,
+    };
 
-    case LOAD_LOGOUT_STARTED:
-      return {
-        ...state,
-        logoutLoading: true,
-      };
-    case LOAD_LOGOUT_SUCCEED:
-      return {
-        ...state,
-        lastUpdateDateTime: moment().toISOString(),
-        logged: false,
-        logoutLoading: false,
-        logoutError: null,
-        data: {},
-      };
-    case LOAD_LOGOUT_FAILED:
-      return {
-        ...state,
-        logoutLoading: false,
-        logoutError: action.error,
-      };
+  case LOAD_LOGOUT_STARTED:
+    return {
+      ...state,
+      logoutLoading: true,
+    };
+  case LOAD_LOGOUT_SUCCEED:
+    return {
+      ...state,
+      lastUpdateDateTime: moment().toISOString(),
+      logged: false,
+      logoutLoading: false,
+      logoutError: null,
+      data: {},
+    };
+  case LOAD_LOGOUT_FAILED:
+    return {
+      ...state,
+      logoutLoading: false,
+      logoutError: action.error,
+    };
 
-    default: return state;
+  default: return state;
   }
 
 }

@@ -68,50 +68,50 @@ export const loadListAdd = ({ id, text, options = { reload: false }} = {}) =>
 const reducer = (state = INITIAL_STATE, action) => {
 
   switch (action.type) {
-    case LOAD_LIST_STARTED:
-      return {
-        ...state,
-        loading: true,
-      };
-    case LOAD_LIST_SUCCEED:
-      return {
-        ...state,
-        lastUpdateDateTime: moment().toISOString(),
-        loading: false,
-        error: null,
-        data: [
-          ...action.data
-        ],
-      };
-    case LOAD_LIST_FAILED:
-      return {
-        ...state,
-        loading: false,
-        error: action.error,
-      };
+  case LOAD_LIST_STARTED:
+    return {
+      ...state,
+      loading: true,
+    };
+  case LOAD_LIST_SUCCEED:
+    return {
+      ...state,
+      lastUpdateDateTime: moment().toISOString(),
+      loading: false,
+      error: null,
+      data: [
+        ...action.data
+      ],
+    };
+  case LOAD_LIST_FAILED:
+    return {
+      ...state,
+      loading: false,
+      error: action.error,
+    };
 
-    case LOAD_LIST_ADD_STARTED:
-      return {
-        ...state,
-        logoutLoading: true,
-      };
-    case LOAD_LIST_ADD_SUCCEED:
-      return {
-        ...state,
-        lastUpdateDateTime: moment().toISOString(),
-        logged: false,
-        logoutLoading: false,
-        logoutError: null,
-        data: [],
-      };
-    case LOAD_LIST_ADD_FAILED:
-      return {
-        ...state,
-        logoutLoading: false,
-        logoutError: action.error,
-      };
+  case LOAD_LIST_ADD_STARTED:
+    return {
+      ...state,
+      logoutLoading: true,
+    };
+  case LOAD_LIST_ADD_SUCCEED:
+    return {
+      ...state,
+      lastUpdateDateTime: moment().toISOString(),
+      logged: false,
+      logoutLoading: false,
+      logoutError: null,
+      data: [],
+    };
+  case LOAD_LIST_ADD_FAILED:
+    return {
+      ...state,
+      logoutLoading: false,
+      logoutError: action.error,
+    };
 
-    default: return state;
+  default: return state;
   }
 
 }
