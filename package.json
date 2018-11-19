@@ -70,7 +70,10 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "test:coverage": "node scripts/test.js --env=jsdom --coverage --collectCoverage",
+    "lint": "node ./node_modules/eslint/bin/eslint.js src/**/*.js",
+    "lint:fix": "node ./node_modules/eslint/bin/eslint.js src/**/*.js --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
