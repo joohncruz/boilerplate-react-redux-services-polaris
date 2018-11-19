@@ -1,0 +1,4 @@
+/config/**
+/scripts/**
+/jsdoc/**
+/node_modules/**
