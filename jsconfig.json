@@ -2,19 +2,9 @@
   "compilerOptions": {
     "target": "es2017",
     "allowSyntheticDefaultImports": false,
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
-      "Common/*": ["src/Common/*"],
-      "Assets/*": ["src/Common/Assets/*"],
-      "Styles/*": ["src/Common/Assets/Styles/*"],
-      "Components/*": ["src/Common/Components/*"],
-      "Helpers/*": ["src/Common/Helpers/*"],
-      "Interceptors/*": ["src/Common/Interceptors/*"],
-      "Mocks/*": ["src/Common/Mocks/*"],
-      "Config/*": ["src/Config/*"],
-      "Ducks/*": ["src/Infrastructure/Ducks/*"],
-      "Repositories/*": ["src/Infrastructure/Repositories/*"],
-      "Services/*": ["src/Infrastructure/Services/*"]
+      "*": ["src/*"]
     }
   },
   "exclude": ["dist"],

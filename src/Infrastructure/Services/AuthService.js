@@ -1,19 +1,18 @@
+import AuthRepository from 'Infrastructure/Repositories/AuthRepository';
+
 class AuthService {
-  constructor(authRepository) {
+  constructor(authRepository = new AuthRepository()) {
     this.authRepository = authRepository;
   }
 
-  async authenticate({ email, password }) {
+  async login({ email, password }) {
     try {
-      const { response: { data } } = await this.authRepository.post({ email, password })
-      return Promise.resolve(data)
-    } catch (error) {
-      // TODO: Inserir um log de error.
-      return Promise.reject(error)
+      const { response: data } = await this.authRepository.post({ email, password });
+      return Promise.resolve(data);
+    } catch (err) {
+      return Promise.reject(err);
     }
-
   }
-
-};
+}
 
 export default AuthService;

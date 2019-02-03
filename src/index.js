@@ -5,34 +5,31 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 
 import { AppProvider } from '@shopify/polaris';
 
-import * as serviceWorker from './Config/ServiceWorker';
-import configureStore from './Config/Store';
+import translate from 'Config/Translate';
 
-import App from './App';
+import * as serviceWorker from 'Config/ServiceWorker';
+import configureStore from 'Config/Store';
+
+import App from 'App';
 
 import './index.css';
 import '@shopify/polaris/styles.scss';
 
 const { persistor, store } = configureStore();
 
-const render = (target, language) => {
+const main = (target, language) => {
   ReactDOM.render(
     <Provider store={store}>
-      <PersistGate loading={<div>loading...</div>} persistor={persistor} >
-        <AppProvider>
+      <PersistGate loading={<div>loading...</div>} persistor={persistor}>
+        <AppProvider i18n={translate[language]}>
           <App />
         </AppProvider>
       </PersistGate>
-    </Provider>
-    , target
+    </Provider>,
+    target,
   );
-}
+};
 
-render(document.getElementById('root'), 'pt-br');
+main(document.getElementById('root'), 'ptBr');
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-//TODO: Na hora do build criar pegar um arquivo da raiz pro projeto e colocar na build.

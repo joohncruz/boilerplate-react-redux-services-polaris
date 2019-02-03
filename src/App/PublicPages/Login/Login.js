@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Page, Card, TextField, Button } from '@shopify/polaris';
+import {
+  Page, Card, TextField, Button,
+} from '@shopify/polaris';
 
 import './Login.scss';
 
@@ -17,14 +19,14 @@ class Login extends Component {
 
   handleChange = (value, id) => {
     this.setState({ [id]: value });
-  }
+  };
 
   submit = async () => {
     const { email, password } = this.state;
     const { loadAuth } = this.props;
 
     await loadAuth({ email, password });
-  }
+  };
 
   render() {
     const { email, password } = this.state;
@@ -54,14 +56,13 @@ class Login extends Component {
           </Card>
         </Page>
       </div>
-    )
+    );
   }
+}
 
-};
-
-Login.proptypes = {
+Login.propTypes = {
   auth: PropTypes.object.isRequired,
   loadAuth: PropTypes.func.isRequired,
-}
+};
 
 export default Login;

@@ -1,6 +1,4 @@
-// import axios from 'axios';
-
-import { API_URL } from 'Helpers/ApiHelper';
+import { API_URL } from 'Common/Helpers/ApiHelper';
 
 class ListRepository {
   constructor({ routePrefix = API_URL, routeVersion = 'v1' } = {}) {
@@ -8,52 +6,51 @@ class ListRepository {
   }
 
   post({ id, text }) {
+    console.log('TRACE ListRepository: POST', { url: this.url, id, text });
     const response = {
       data: {
         id,
-        text
-      }
-    }
+        text,
+      },
+    };
 
-    return new Promise(
-      function (resolve, reject) {
-        window.setTimeout(
-          function () {
-            resolve({ response })
-          }, Math.random() * 2000 + 1000);
-      });
+    return new Promise((resolve) => {
+      window.setTimeout(() => {
+        resolve({ response });
+      }, Math.random() * 2000 + 1000);
+    });
   }
 
   get() {
-    const response = {
-      data: [
-        {
-          "id": 1,
-          "text": "TESTE 1"
-        },
-        {
-          "id": 2,
-          "text": "TESTE 2"
-        },
-        {
-          "id": 3,
-          "text": "TESTE 3"
-        },
-        {
-          "id": 4,
-          "text": "TESTE 4"
-        }
-      ]
-    }
+    console.log('TRACE ListRepository: GET', { url: this.url });
 
-    return new Promise(
-      function (resolve, reject) {
-        window.setTimeout(
-          function () {
-            resolve({ response })
-          }, Math.random() * 2000 + 1000);
-      });
+    return new Promise((resolve) => {
+      window.setTimeout(() => {
+        const response = {
+          data: [
+            {
+              id: 1,
+              text: 'TESTE 1',
+            },
+            {
+              id: 2,
+              text: 'TESTE 2',
+            },
+            {
+              id: 3,
+              text: 'TESTE 3',
+            },
+            {
+              id: 4,
+              text: 'TESTE 4',
+            },
+          ],
+        };
+
+        resolve({ response });
+      }, Math.random() * 2000 + 1000);
+    });
   }
-};
+}
 
 export default ListRepository;

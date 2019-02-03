@@ -5,25 +5,25 @@ class ListService {
 
   async add({ id, text }) {
     try {
-      const { response: { data } } = await this.listRepository.add({ id, text })
-      return Promise.resolve(data)
+      const {
+        response: { data },
+      } = await this.listRepository.add({ id, text });
+      return Promise.resolve(data);
     } catch (error) {
-      // TODO: Inserir um log de error.
-      return Promise.reject(error)
+      return Promise.reject(error);
     }
-
   }
 
   async get() {
     try {
-      const { response: { data } } = await this.listRepository.get()
-      return Promise.resolve(data)
+      const {
+        response: { data },
+      } = await this.listRepository.get();
+      return Promise.resolve(data);
     } catch (error) {
-      // TODO: Inserir um log de error.
-      return Promise.reject(error)
+      return Promise.reject(error);
     }
   }
-
-};
+}
 
 export default ListService;

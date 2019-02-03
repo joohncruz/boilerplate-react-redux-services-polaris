@@ -1,12 +1,12 @@
-import PrivatePages from './PrivatePages';
 import { connect } from 'react-redux';
+import PrivatePages from './PrivatePages';
 
-const mapStateToProps = state => {
-  const { auth } = state
+const mapStateToProps = (state) => {
+  const { auth } = state;
 
   return {
-    logged: auth ? auth.logged : false
-  }
+    logged: auth ? auth.logged : false,
+  };
 };
 
 export default connect(

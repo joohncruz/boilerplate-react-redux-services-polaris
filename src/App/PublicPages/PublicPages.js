@@ -6,21 +6,20 @@ function PublicPages({ component: Component, logged, ...rest }) {
   return (
     <Route
       {...rest}
-      render={props => (
-        !logged
-          ? (
-            <Component {...props} />
-          )
-          : (
-            <Redirect to={{ pathname: '/home', state: { from: props.location } }} />
-          )
-      )}
+      render={props => (!logged ? (
+        <Component {...props} />
+      ) : (
+        <Redirect
+          to={{ pathname: '/home', state: { from: props.location } }}
+        />
+      ))
+      }
     />
-  )
-};
+  );
+}
 
 PublicPages.propTypes = {
   logged: PropTypes.bool.isRequired,
-}
+};
 
-export default PublicPages
+export default PublicPages;

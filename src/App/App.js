@@ -19,16 +19,28 @@ class App extends Component {
     super(props);
     this.state = {
       privateItems: [
-        { component: Home, id: 'home', name: 'Home', path: '/home', isMenu: true },
-        { component: Listagem, id: 'listagem', name: 'Listagem', path: '/listagem', isMenu: true },
-      ]
-    }
+        {
+          component: Home,
+          id: 'home',
+          name: 'Home',
+          path: '/home',
+          isMenu: true,
+        },
+        {
+          component: Listagem,
+          id: 'listagem',
+          name: 'Listagem',
+          path: '/listagem',
+          isMenu: true,
+        },
+      ],
+    };
   }
 
   privateItemMenu = () => {
     const { privateItems } = this.state;
-    return privateItems.filter(item => item.isMenu)
-  }
+    return privateItems.filter(item => item.isMenu);
+  };
 
   render() {
     const { privateItems } = this.state;
@@ -41,18 +53,17 @@ class App extends Component {
             {/* Public routes */}
             <PublicPages path="/login" component={Login} />
             {/* Private routes */}
-            <PrivatePages path="/" exact component={Home} menu={menu}/>
-            {
-              privateItems.map((item) => (
-                <PrivatePages
-                  key={`private-pages-${item.id}`}
-                  path={item.path}
-                  exact component={item.component}
-                  menu={menu}
-                />
-              ))
-            }
-            <PrivatePages path="*" exact component={Home} menu={menu}/>
+            <PrivatePages path="/" exact component={Home} menu={menu} />
+            {privateItems.map(item => (
+              <PrivatePages
+                key={`private-pages-${item.id}`}
+                path={item.path}
+                exact
+                component={item.component}
+                menu={menu}
+              />
+            ))}
+            <PrivatePages path="*" exact component={Home} menu={menu} />
           </Switch>
         </BrowserRouter>
       </div>

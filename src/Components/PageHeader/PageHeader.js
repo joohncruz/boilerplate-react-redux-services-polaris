@@ -9,14 +9,16 @@ function PageHeader({ loadLogout }) {
   return (
     <div className="page-header">
       <div className="action-contant">
-        <Button plain onClick={loadLogout}>Sair</Button>
+        <Button plain onClick={loadLogout}>
+          Sair
+        </Button>
       </div>
     </div>
-  )
+  );
 }
 
-PageHeader.propTypes ={
+PageHeader.propTypes = {
   loadLogout: PropTypes.func.isRequired,
-}
+};
 
 export default PageHeader;

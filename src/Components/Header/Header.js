@@ -5,17 +5,17 @@ import PageHeader from 'Components/PageHeader';
 
 import './Header.scss';
 
-function Header ({ children }) {
-  return(
+function Header({ children }) {
+  return (
     <header>
       <PageHeader />
-      { children }
+      {children}
     </header>
-  )
+  );
 }
 
 Header.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
 };
 
 Header.defaultProps = {

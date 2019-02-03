@@ -150,17 +150,6 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
-      // Project alias 
-      'Assets': path.resolve(__dirname, "..", "src", "Common/Assets"),
-      'Styles': path.resolve(__dirname, "..", "src", "Common/Assets/Styles"),
-      'Components': path.resolve(__dirname, "..", "src", "Common/Components"),
-      'Helpers': path.resolve(__dirname, "..", "src", "Common/Helpers"),
-      'Interceptors': path.resolve(__dirname, "..", "src", "Common/Interceptors"),
-      'Mocks': path.resolve(__dirname, "..", "src", "Common/Mocks"),
-      'Config': path.resolve(__dirname, "..", "src", "Config"),
-      'Ducks': path.resolve(__dirname, "..", "src", "Infrastructure/Ducks"),
-      'Repositories': path.resolve(__dirname, "..", "src", "Infrastructure/Repositories"),
-      'Services': path.resolve(__dirname, "..", "src", "Infrastructure/Services"),
     },
     plugins: [
       // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -197,7 +186,7 @@ module.exports = {
             options: {
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
-              
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -230,7 +219,7 @@ module.exports = {
               customize: require.resolve(
                 'babel-preset-react-app/webpack-overrides'
               ),
-              
+
               plugins: [
                 [
                   require.resolve('babel-plugin-named-asset-import'),
@@ -270,7 +259,7 @@ module.exports = {
               cacheDirectory: true,
               // Don't waste time on Gzipping the cache
               cacheCompression: false,
-              
+
               // If an error happens in a package, it's possible to be
               // because it was compiled. Thus, we don't want the browser
               // debugger to show the original code. Instead, the code

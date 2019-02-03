@@ -16,13 +16,10 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 export default () => {
   const store = createStore(
     persistedReducer,
-    composeWithDevTools(
-      applyMiddleware(
-        thunkMiddleware,
-      )),
-  )
+    composeWithDevTools(applyMiddleware(thunkMiddleware)),
+  );
 
   const persistor = persistStore(store);
 
-  return { store, persistor }
-}
+  return { store, persistor };
+};
