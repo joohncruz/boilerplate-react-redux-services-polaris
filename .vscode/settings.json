@@ -1,6 +1,15 @@
 {
-    "editor.tabSize": 2,
-    "editor.wordWrapColumn": 100,
-    "editor.rulers": [100],
-    "editor.renderIndentGuides":true
+  "editor.tabSize": 2,
+  "editor.wordWrapColumn": 100,
+  "editor.rulers": [100],
+  "editor.renderIndentGuides": true,
+  "git.ignoreLimitWarning": true,
+
+  "prettier.eslintIntegration": true,
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.useTabs": false,
+  "prettier.printWidth": 100,
+  "git.confirmSync": false,
+  "git.autofetch": true
 }

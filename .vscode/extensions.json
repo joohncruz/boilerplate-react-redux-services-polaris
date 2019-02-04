@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+      "waderyan.nodejs-extension-pack",
+      "eamodio.gitlens",
+      "editorconfig.editorconfig",
+      "chakrounanas.turbo-console-log",
+      "msjsdiag.debugger-for-chrome",
+      "esbenp.prettier-vscode",
+      "equimper.react-native-react-redux",
+      "xabikos.javascriptsnippets",
+      "wix.vscode-import-cost"
+  ]
+}
