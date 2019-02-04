@@ -16,7 +16,7 @@ export const INITIAL_STATE = {
   loginError: null,
   logoutLoading: false,
   logoutError: null,
-  keepLoggedIn: false,
+  success: false,
 };
 
 export const LOAD_AUTH_STARTED = `${DUCK_NAME}/LOAD_AUTH_STARTED`;
@@ -71,6 +71,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     case LOAD_AUTH_STARTED:
       return {
         ...state,
+        lastUpdateDateTime: moment().toISOString(),
         loginLoading: true,
       };
     case LOAD_AUTH_SUCCEED:
@@ -79,7 +80,8 @@ const reducer = (state = INITIAL_STATE, action) => {
         lastUpdateDateTime: moment().toISOString(),
         logged: true,
         loginLoading: false,
-        loginError: false,
+        loginError: null,
+        success: true,
         data: {
           ...action.data,
         },
@@ -87,8 +89,10 @@ const reducer = (state = INITIAL_STATE, action) => {
     case LOAD_AUTH_FAILED:
       return {
         ...state,
+        lastUpdateDateTime: moment().toISOString(),
         logged: false,
         loginLoading: false,
+        success: false,
         loginError: action.error,
       };
 

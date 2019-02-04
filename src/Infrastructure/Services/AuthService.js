@@ -7,7 +7,7 @@ class AuthService {
 
   async login({ email, password }) {
     try {
-      const { response: data } = await this.authRepository.post({ email, password });
+      const { data } = await this.authRepository.post({ email, password });
       return Promise.resolve(data);
     } catch (err) {
       return Promise.reject(err);

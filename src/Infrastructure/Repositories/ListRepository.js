@@ -2,7 +2,7 @@ import { API_URL } from 'Common/Helpers/ApiHelper';
 
 class ListRepository {
   constructor({ routePrefix = API_URL, routeVersion = 'v1' } = {}) {
-    this.url = `${routePrefix}${routeVersion}/list`;
+    this.url = `${routePrefix}/${routeVersion}/list`;
   }
 
   post({ id, text }) {
@@ -26,28 +26,26 @@ class ListRepository {
 
     return new Promise((resolve) => {
       window.setTimeout(() => {
-        const response = {
-          data: [
-            {
-              id: 1,
-              text: 'TESTE 1',
-            },
-            {
-              id: 2,
-              text: 'TESTE 2',
-            },
-            {
-              id: 3,
-              text: 'TESTE 3',
-            },
-            {
-              id: 4,
-              text: 'TESTE 4',
-            },
-          ],
-        };
+        const data = [
+          {
+            id: 1,
+            text: 'TESTE 1',
+          },
+          {
+            id: 2,
+            text: 'TESTE 2',
+          },
+          {
+            id: 3,
+            text: 'TESTE 3',
+          },
+          {
+            id: 4,
+            text: 'TESTE 4',
+          },
+        ];
 
-        resolve({ response });
+        resolve({ data });
       }, Math.random() * 2000 + 1000);
     });
   }

@@ -1,13 +1,13 @@
+import ListRepository from 'Infrastructure/Repositories/ListRepository';
+
 class ListService {
-  constructor(listRepository) {
+  constructor(listRepository = new ListRepository()) {
     this.listRepository = listRepository;
   }
 
   async add({ id, text }) {
     try {
-      const {
-        response: { data },
-      } = await this.listRepository.add({ id, text });
+      const { data } = await this.listRepository.add({ id, text });
       return Promise.resolve(data);
     } catch (error) {
       return Promise.reject(error);
@@ -16,9 +16,7 @@ class ListService {
 
   async get() {
     try {
-      const {
-        response: { data },
-      } = await this.listRepository.get();
+      const { data } = await this.listRepository.get();
       return Promise.resolve(data);
     } catch (error) {
       return Promise.reject(error);
