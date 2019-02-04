@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rm -rf ./dist ./coverage &&  yarn test --clearCache",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "sonar": "yarn && yarn run test -- --coverage && sonar-scanner",
     "test": "node scripts/test.js",
-    "test:coverage": "node scripts/test.js --env=jsdom --coverage --collectCoverage",
+    "test:coverage": "yarn test --env=jsdom --coverage --collectCoverage",
     "lint": "node ./node_modules/eslint/bin/eslint.js src/**/*.js",
     "lint:fix": "node ./node_modules/eslint/bin/eslint.js src/**/*.js --fix"
   },
